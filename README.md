@@ -44,6 +44,7 @@ make
 |----------|------|---------------------|
 | [01-echo-server](lessons/01-echo-server/) | エコーサーバー | socket, bind, listen, accept, send, recv, close |
 | [02-chat](lessons/02-chat/) | 双方向チャット | select, FD_ZERO, FD_SET, FD_ISSET |
+| [03-wireshark-analysis](lessons/03-wireshark-analysis/) | パケット解析 | tcpdump, Wireshark |
 
 ## 学べること
 
@@ -85,6 +86,29 @@ make
 - `FD_ZERO()` - fd_setを初期化
 - `FD_SET()` - fd_setにfdを追加
 - `FD_ISSET()` - fdがセットされているか確認
+
+### Lesson 03: Wireshark Packet Analysis
+
+tcpdumpとWiresharkを使用して、TCP/IP通信のパケットを解析します。
+
+```
+3ウェイハンドシェイク:
+    [SYN]     クライアント → サーバー
+    [SYN-ACK] サーバー → クライアント
+    [ACK]     クライアント → サーバー
+
+データ転送:
+    [PSH,ACK] データ送信
+    [ACK]     受信確認
+
+4ウェイハンドシェイク:
+    [FIN,ACK] 終了要求
+    [ACK]     確認
+```
+
+学習する内容：
+- `tcpdump` - パケットキャプチャ（pcapファイル生成）
+- `Wireshark` - パケット解析（3ウェイハンドシェイク、データ転送、4ウェイハンドシェイク）
 
 ## ドキュメント
 
