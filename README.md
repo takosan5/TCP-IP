@@ -43,6 +43,7 @@ make
 | レッスン | 内容 | 学習するソケットAPI |
 |----------|------|---------------------|
 | [01-echo-server](lessons/01-echo-server/) | エコーサーバー | socket, bind, listen, accept, send, recv, close |
+| [02-chat](lessons/02-chat/) | 双方向チャット | select, FD_ZERO, FD_SET, FD_ISSET |
 
 ## 学べること
 
@@ -65,6 +66,25 @@ make
 - `connect()` - サーバーへの接続
 - `send()` / `recv()` - データの送受信
 - `close()` - ソケットの終了
+
+### Lesson 02: Bidirectional Chat
+
+`select()`を使用して、サーバーとクライアント間で双方向にメッセージをやり取りできるチャットを実装します。
+
+```
+クライアント          サーバー
+    |                    |
+    |--- "こんにちは" -->|
+    |<-- "やあ！" -------|
+    |--- "元気？" ------>|
+    |<-- "元気だよ" -----|
+```
+
+学習するソケットAPI：
+- `select()` - 複数のファイルディスクリプタを同時に監視
+- `FD_ZERO()` - fd_setを初期化
+- `FD_SET()` - fd_setにfdを追加
+- `FD_ISSET()` - fdがセットされているか確認
 
 ## ドキュメント
 
