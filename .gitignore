@@ -1,0 +1,16 @@
+# Compiled binaries
+lessons/*/server
+lessons/*/client
+
+# Object files
+*.o
+*.obj
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
